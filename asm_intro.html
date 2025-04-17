@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>Apple School Manager 檔案說明</title>
+  <style>
+    body { font-family: 'Helvetica Neue', sans-serif; margin: 40px; background: #f9f9f9; color: #333; }
+    h1 { color: #2c3e50; }
+    .section { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 30px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+    th { background: #f0f0f0; }
+    ul { padding-left: 1.2em; }
+  </style>
+</head>
+<body>
+  <h1>📚 Apple School Manager 六大檔案說明</h1>
+
+  <div class="section">
+    <h2>📦 六個檔案關聯總覽</h2>
+    <ul>
+      <li><strong>Students.csv：</strong> 學生名單，每位學生一筆，包含帳號、密碼、班級等。</li>
+      <li><strong>Staff.csv：</strong> 教職員名單，每位教師或行政人員一筆。</li>
+      <li><strong>Classes.csv：</strong> 班級資料，綁定課程與學校。</li>
+      <li><strong>Courses.csv：</strong> 課程資料，提供學科與課程對應。</li>
+      <li><strong>Rosters.csv：</strong> 課程與人員的關聯（學生、老師與課程的對應表）。</li>
+      <li><strong>Locations.csv：</strong> 學校地點資訊（只需一筆）。</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>🔗 關聯圖示</h2>
+    <ul>
+      <li><code>Students.csv</code> ➝ 根據 <strong>Person ID</strong> 加入 <code>Rosters.csv</code></li>
+      <li><code>Staff.csv</code> ➝ 根據 <strong>Person ID</strong> 加入 <code>Rosters.csv</code></li>
+      <li><code>Classes.csv</code> ➝ 定義班級與 <code>Courses.csv</code> 的關聯</li>
+      <li><code>Courses.csv</code> ➝ 課程主體，對應 <code>Rosters.csv</code></li>
+      <li><code>Rosters.csv</code> ➝ 課程與人（學生/教師）的綁定</li>
+      <li><code>Locations.csv</code> ➝ 所有檔案中的 <strong>Location ID</strong> 對應學校代碼</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>📄 欄位中英對照（常用）</h2>
+    <table>
+      <tr><th>中文欄位</th><th>英文欄位 (Apple School Manager)</th></tr>
+      <tr><td>學號</td><td>Person ID</td></tr>
+      <tr><td>姓名</td><td>First Name / Last Name</td></tr>
+      <tr><td>電子郵件 / Apple ID</td><td>Managed Apple ID / Email Address</td></tr>
+      <tr><td>密碼</td><td>Password / Password Policy</td></tr>
+      <tr><td>角色</td><td>Role（teacher/staff/specialist）</td></tr>
+      <tr><td>班級代碼</td><td>Class Code / Class ID</td></tr>
+      <tr><td>課程代碼</td><td>Course Code / Course ID</td></tr>
+      <tr><td>學校代碼</td><td>Location ID</td></tr>
+      <tr><td>學校名稱</td><td>Location Name</td></tr>
+    </table>
+  </div>
+</body>
+</html>
