@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>Apple School Manager 全校帳號產生器</title>
+    <style>
+        body { font-family: 'Helvetica Neue', sans-serif; margin: 40px; background: #f9f9f9; color: #333; }
+        h1 { color: #2c3e50; }
+        input, label, select { display: block; margin: 10px 0; }
+        .section { background: #fff; padding: 20px; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
+        .download-link { margin-top: 10px; }
+        .note { font-size: 0.9em; color: #555; }
+    </style>
+</head>
+<body>
+
+    <h1>Apple School Manager 全校帳號轉換工具</h1>
+
+    <div class="section">
+        <h2>📌 上傳資料</h2>
+        <form>
+            <label for="schoolCode">學校代碼（教育部代碼）</label>
+            <input type="text" id="schoolCode" name="schoolCode" placeholder="如：064756">
+
+            <label for="schoolName">學校名稱</label>
+            <input type="text" id="schoolName" name="schoolName" placeholder="如：台中市立新國小">
+
+            <label for="studentCSV">上傳學生 CSV 檔</label>
+            <input type="file" id="studentCSV" accept=".csv">
+
+            <label for="teacherCSV">上傳教師 CSV 檔</label>
+            <input type="file" id="teacherCSV" accept=".csv">
+        </form>
+    </div>
+
+    <div class="section">
+        <h2>✅ 資料上傳需求</h2>
+
+        <h3>📘 學生 CSV</h3>
+        <ul>
+            <li>欄位：學號、姓名、Apple ID、密碼、班級代碼（例如：301-113）</li>
+        </ul>
+
+        <h3>📘 教師 CSV</h3>
+        <ul>
+            <li>欄位：Person ID（教師常用帳號）、姓名、Apple ID、角色（導師、科任、行政）</li>
+            <li>可包含授課班級代碼（例如：301-113,302-114）</li>
+        </ul>
+
+        <div class="download-link">
+            🔽 <a href="生成的學生資料範本_v2.csv" download>下載學生 CSV 範本</a>
+        </div>
+        <div class="download-link">
+            🔽 <a href="生成的教師資料範本_v2.csv" download>下載教師 CSV 範本</a>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>⚙️ 處理與匯出</h2>
+        <p>➡️ 完成上傳後，系統將產出 <strong>Students.csv、Staff.csv、Classes.csv、Courses.csv、Rosters.csv、Locations.csv</strong> 六個檔案。</p>
+        <button>🔄 開始轉換</button>
+    </div>
+
+</body>
+</html>
